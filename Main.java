@@ -35,7 +35,36 @@ public class Main {
         }
         System.out.println(answer.toString());
     }
+    static private void ex6(int n){
+        StringBuilder answer = new StringBuilder("");
+        for(int i=1; i<=n; i++){
+//            assert (n-i) > 0;
+            answer.append(ntimes(n-i," ")).append(ntimes(2*i-1,"*")).append("\n");
+        }
+        for(int i=n-1; i>=1; i--){
+//            assert (n-i) > 0;
+            answer.append(ntimes(n-i," ")).append(ntimes(2*i-1,"*")).append("\n");
+        }
+        System.out.println(answer.toString());
+
+    }
+    static private void ex7(int n, String name){
+        StringBuilder answer = new StringBuilder("");
+        for(int i=1; i<n; i++){
+//            assert (n-i) > 0;
+            answer.append(ntimes(n-i," ")).append(ntimes(2*i-1,"*")).append("\n");
+        }
+        System.out.println((n-name.length())/2);
+        answer.append(ntimes((2*n-1-name.length())/2," ")).append(name).append("\n");
+        for(int i=n-1; i>=1; i--){
+//            assert (n-i) > 0;
+            answer.append(ntimes(n-i," ")).append(ntimes(2*i-1,"*")).append("\n");
+        }
+        System.out.println(answer.toString());
+
+    }
     public static void main(String[] args) {
-        ex5(5);
+//        ex7(6,"Billy");
+//        ex6(5);
     }
 }
