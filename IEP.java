@@ -1,5 +1,8 @@
 package com.TW;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class IEP {
     static private String ntimes(int n, String x){
 
@@ -96,11 +99,48 @@ public class IEP {
             }
         }
     }
+    private static void generate(int n){
+        int[] a = new int[n+1];
+//        System.out.println(Arrays.toString(a));
+        for (int i = 2; i < n; i++) {
+            if(n%i==0) a[i] = i;
+        }
+        for (int i = 2; i < n; i++) {
+            if(a[i] != 0){
+                for(int j=i+1; j<n; j++){
+                    if(a[j]%a[i]==0){
+                        a[j] = 0;
+                    }
+                }
+            }
 
+        }
+//        System.out.println(Arrays.toString(a));
+        ArrayList<Integer> answer = new ArrayList<>();
+        for (int i = 2; i < n-1; i++) {
+            if(a[i]!=0) answer.add(a[i]);
+        }
+        System.out.println(Arrays.toString(answer.toArray()));
+    }
     public static void main(String[] args) {
-//        ex7(6,"Billy");
-//        ex6(5);
+        ex1();
+        System.out.println();
+        ex2(5);
+        System.out.println();
+        ex3(5);
+        System.out.println();
+        ex4(5);
+        System.out.println();
+        ex5(5);
+        System.out.println();
+        ex6(5);
+        System.out.println();
+        ex7(5,"Billy");
+        System.out.println();
+        fizzBuzz();
+        System.out.println();
         fizzBuzzAlt();
-
+        System.out.println();
+        generate(30);
     }
 }
