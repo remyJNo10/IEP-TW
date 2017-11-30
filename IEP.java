@@ -1,6 +1,6 @@
 package com.TW;
 
-public class Main {
+public class IEP {
     static private String ntimes(int n, String x){
 
         StringBuilder fullstring = new StringBuilder("");
